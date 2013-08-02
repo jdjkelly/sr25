@@ -61,9 +61,7 @@ __END__
 <title>search sr25</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/bootstrap.min-9546fc9.css">
-<style>
-body { margin-top: 40px; }
-</style>
+<style>body{margin-top:40px}</style>
 <div class="container">
   <form name="search" action="/search" method="post">
     <div class="form-group">
