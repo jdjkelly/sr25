@@ -9,7 +9,7 @@ require "sinatra/reloader"
 
 DB = Sequel.connect(ENV["DB"], logger: Logger.new(STDOUT))
 
-class Search < Sinatra::Base
+class SR25 < Sinatra::Base
   enable :inline_templates
   helpers Sinatra::JSON
 
@@ -17,11 +17,11 @@ class Search < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get "/" do
+  get "/search" do
     erb :search
   end
 
-  post "/" do
+  post "/search" do
     results = []
     foods = DB[:food_des]
     query = params[:q]
@@ -32,25 +32,11 @@ class Search < Sinatra::Base
     end
     json results
   end
-end
-
-class View < Sinatra::Base
-  helpers Sinatra::JSON
-
-  configure :development do
-    register Sinatra::Reloader
-  end
 
   get "/:ndb_no" do
     return if params[:ndb_no] == "favicon.ico"
-
     food = DB[:food_des].where(ndb_no: params[:ndb_no]).first
-
     result = { name: food[:long_desc], nutrients: [] }
-
-    # grp = DB[:fd_group].where(fdgrp_cd: food[:fdgrp_cd]).first[:fdgrp_desc]
-    # result[:food_group] = grp
-
     nut_data = DB[:nut_data].where(ndb_no: params[:ndb_no]).all
     nut_data.each do |nutrient|
       nutr = DB[:nutr_def].where(nutr_no: nutrient[:nutr_no]).first
@@ -60,7 +46,6 @@ class View < Sinatra::Base
         units: nutr[:units]
       })
     end
-
     json result
   end
 end
