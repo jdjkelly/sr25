@@ -34,8 +34,6 @@ class SR25 < Sinatra::Base
   end
 
   get "/:ndb_no" do
-    return if params[:ndb_no] == "favicon.ico"
-
     food = DB[:food_des].where(ndb_no: params[:ndb_no]).first
     result = { description: food[:long_desc], group: nil, nutrients: [] }
 
