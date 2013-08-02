@@ -2,6 +2,7 @@ source "https://rubygems.org"
 ruby "2.0.0"
 
 gem "multi_json"
+gem "newrelic_rpm"
 gem "pg"
 gem "puma"
 gem "rake"

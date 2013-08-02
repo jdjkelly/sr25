@@ -1,5 +1,6 @@
 require "logger"
 require "multi_json"
+require "newrelic_rpm"
 require "pp"
 require "sequel"
 require "sinatra/base"

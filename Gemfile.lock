@@ -6,6 +6,7 @@ GEM
     eventmachine (1.0.3)
     method_source (0.8.2)
     multi_json (1.7.7)
+    newrelic_rpm (3.6.6.147)
     pg (0.16.0)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -39,6 +40,7 @@ PLATFORMS
 
 DEPENDENCIES
   multi_json
+  newrelic_rpm
   pg
   pry
   puma
