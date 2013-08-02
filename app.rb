@@ -35,9 +35,14 @@ class SR25 < Sinatra::Base
 
   get "/:ndb_no" do
     return if params[:ndb_no] == "favicon.ico"
+
     food = DB[:food_des].where(ndb_no: params[:ndb_no]).first
-    result = { name: food[:long_desc], nutrients: [] }
-    nut_data = DB[:nut_data].where(ndb_no: params[:ndb_no]).all
+    result = { description: food[:long_desc], group: nil, nutrients: [] }
+
+    grp = DB[:fd_group].where(fdgrp_cd: food[:fdgrp_cd]).first[:fdgrp_desc]
+    result[:group] = grp
+
+    nut_data = DB[:nut_data].where(ndb_no: params[:ndb_no]).order(:nutr_no).all
     nut_data.each do |nutrient|
       nutr = DB[:nutr_def].where(nutr_no: nutrient[:nutr_no]).first
       result[:nutrients].push({
@@ -46,6 +51,7 @@ class SR25 < Sinatra::Base
         units: nutr[:units]
       })
     end
+
     json result
   end
 end
