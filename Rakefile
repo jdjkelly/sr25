@@ -11,7 +11,7 @@ namespace :db do
     puts "Seeding took #{total_time} seconds"
   end
 
-  task :drop_tables do
+  task :destroy do
     DB.drop_table?(:datsrcln,
                    :footnote,
                    :langual,
@@ -23,7 +23,8 @@ namespace :db do
                    :nutr_def,
                    :food_des,
                    :src_cd,
-                   :fd_group)
+                   :fd_group,
+                   :schema_migrations)
   end
 
   task :import_data => [:fd_group,
