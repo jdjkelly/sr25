@@ -73,7 +73,7 @@ body { margin-top: 40px; }
         Enter a food name or description.
         Use logical operators (&, |, !) for advanced search.
       </p>
-      <input name="q" type="text" placeholder="eggs" class="form-control input-large">
+      <input autofocus name="q" type="text" placeholder="eggs" class="form-control input-large">
     </div>
     <button type="submit" class="btn btn-default btn-large pull-right">
       Search
