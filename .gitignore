@@ -1,0 +1,5 @@
+/.bundle
+/.env
+/db/*.dump
+/sr25
+/vendor/bundle
