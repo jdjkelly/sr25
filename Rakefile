@@ -16,6 +16,7 @@ namespace :db do
       primary_key :fdgrp_cd, type: :text
       String :fdgrp_desc, size: 60, null: false
     end
+    DB.run("CREATE INDEX fdgrp_cd_idx ON fd_group(fdgrp_cd)")
 
     DB.create_table :src_cd do
       primary_key :src_cd, type: :text
