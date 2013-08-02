@@ -20,6 +20,6 @@ Sequel.migration do
     # enable full text search and auto-update trigger
     DB.run("ALTER TABLE food_des ADD tsv TSVector")
     DB.run("CREATE TRIGGER TS_tsv BEFORE INSERT OR UPDATE ON food_des FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger(tsv, 'pg_catalog.english', long_desc)")
-    DB.run("CREATE INDEX tsv_GIN ON food_des USING GIN(tsv)")
+    DB.run("CREATE INDEX tsv_long_desc ON food_des USING GIN(tsv)")
   end
 end
