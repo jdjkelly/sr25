@@ -69,7 +69,7 @@ body { margin-top: 40px; }
     <div class="form-group">
       <p class="help-block">
         Enter a food name or description.
-        Use logical operators (&, |, !) for advanced search; e.g. <code>(duck | quail) & ! eggs</code>
+        Use logical operators (&amp;, |, !) for advanced search; e.g. <code>(duck | quail) & ! eggs</code>
       </p>
       <input autofocus name="q" type="text" placeholder="eggs" class="form-control input-large">
     </div>
