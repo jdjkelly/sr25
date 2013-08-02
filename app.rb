@@ -73,7 +73,7 @@ body { margin-top: 40px; }
       </p>
       <input autofocus name="q" type="text" placeholder="eggs" class="form-control input-large">
     </div>
-    <button type="submit" class="btn btn-default btn-large pull-right">
+    <button type="submit" class="btn btn-primary btn-large pull-right">
       Search
     </button>
   </form>
