@@ -27,8 +27,8 @@ class SR25 < Sinatra::Base
     query = params[:q]
     query.gsub!(/(\w)\ (\w)/i, "\\1 & \\2") unless query.match(/\||\&|\!/)
     search = foods.filter("tsv @@ to_tsquery('english', ?)", query)
-    search.order(:long_desc).each do |row|
       results.push({ id: row[:ndb_no], description: row[:long_desc] })
+    search.each do |row|
     end
     json results
   end
