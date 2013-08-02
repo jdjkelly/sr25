@@ -2,4 +2,5 @@
 /.env
 /db/*.dump
 /sr25
+/vendor/bootstrap
 /vendor/bundle

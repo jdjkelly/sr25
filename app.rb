@@ -70,11 +70,22 @@ __END__
 @@ search
 <!DOCTYPE html>
 <title>search sr25</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/bootstrap.min-9546fc9.css">
 <style>
-input, button { font-size: 200%; }
-input { width: 50%; }
+body { margin-top: 40px; }
 </style>
-<form name="search" action="/search" method="post">
-  <input name="q" type="text">
-  <button type="submit">Search</button>
-</form>
+<div class="container">
+  <form name="search" action="/search" method="post">
+    <div class="form-group">
+      <p class="help-block">
+        Enter a food name or description.
+        Use logical operators (&, |, !) for advanced search.
+      </p>
+      <input name="q" type="text" placeholder="eggs" class="form-control input-large">
+    </div>
+    <button type="submit" class="btn btn-default btn-large pull-right">
+      Search
+    </button>
+  </form>
+</div>
