@@ -7,7 +7,18 @@ DB = Sequel.connect(ENV["DB"])
 total_time = 0
 
 namespace :db do
-  task :seed => [:drop_tables, :create_tables, :import_data] do
+  task :seed => [:fd_group,
+                 :src_cd,
+                 :food_des,
+                 :data_src,
+                 :nutr_def,
+                 :datsrcln,
+                 :deriv_cd,
+                 :footnote,
+                 :langdesc,
+                 :langual,
+                 :nut_data,
+                 :weight] do
     puts "Seeding took #{total_time} seconds"
   end
 
@@ -26,19 +37,6 @@ namespace :db do
                    :fd_group,
                    :schema_migrations)
   end
-
-  task :import_data => [:fd_group,
-                        :src_cd,
-                        :food_des,
-                        :data_src,
-                        :nutr_def,
-                        :datsrcln,
-                        :deriv_cd,
-                        :footnote,
-                        :langdesc,
-                        :langual,
-                        :nut_data,
-                        :weight] do; end
 
   task :data_src do
     data_src = DB[:data_src]
