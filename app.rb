@@ -69,7 +69,7 @@ end
 __END__
 @@ layout
 <!DOCTYPE html>
-<title>search sr25</title>
+<title><%= @title %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/bootstrap.min-9546fc9.css">
 <style>
