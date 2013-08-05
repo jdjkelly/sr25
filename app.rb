@@ -73,10 +73,11 @@ __END__
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/bootstrap.min-9546fc9.css">
 <style>
+body { margin-top: 70px; }
 .navbar-brand { max-width: 100%; }
 .navbar-brand b { font-weight: 400; padding-left: 10px; }
 </style>
-<div class="navbar">
+<div class="navbar navbar-fixed-top">
   <div class="container">
     <span class="navbar-brand pull-left">
       <%= @title %>
